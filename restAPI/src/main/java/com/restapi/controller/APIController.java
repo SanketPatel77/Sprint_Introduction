@@ -28,4 +28,10 @@ public class APIController {
     public String greetUser(@RequestBody User user) {
         return "Hello " + user.getFirstName() + " " + user.getLastName() + " from BridgeLabz";
     }
+
+    //    Make REST Call to show Hello Mark Taylor from BridgeLabz put request
+    @PutMapping("hello/put/{firstName}/")
+    public String sayHello(@PathVariable String firstName, @RequestParam String lastName) {
+      return "Hello " + firstName + " " + lastName + " from BridgeLabz";
+    }
 }
