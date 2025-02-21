@@ -1,6 +1,7 @@
 package com.restapi.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -11,5 +12,11 @@ public class APIController {
     @GetMapping("/hello")
     public String hello(){
         return "Hello from BridgeLabz";
+    }
+
+    //Make REST Call to show Hello {name} from BridgeLabz
+    @GetMapping("/hello/query")
+    public String query(@RequestParam("name") String mark){
+        return "Hello "+mark+" from Bridgelabz";
     }
 }
